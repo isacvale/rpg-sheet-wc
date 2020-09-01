@@ -1,0 +1,48 @@
+<div></div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@531&display=swap');
+
+    .ficha-style-title {
+        align-self: center;
+        text-align: center;
+        color: hsla(0, 0%, 0%, .3);
+        font-variation-settings: 'wght' 750;
+        letter-spacing: 2px;
+        font-size: 0.7rem;
+        padding: 0;
+        margin: 0.6em 0 0.4em;
+        text-transform: uppercase;
+    }
+    .ficha-style,
+    .ficha-style input {
+        --smudge: hsla(0, 0%, 0%, .04);
+        --lightestgrey: hsla(0, 0%, 0%, .1);
+        --lightgrey: hsla(0, 0%, 0%, .3);
+        --mediumgrey: hsla(0, 0%, 0%, .6);
+        font-family: 'Catamaran', sans-serif;
+        font-variation-settings: 'wght' 370;
+        font-size: 1em;
+    }
+    .flex-spacer {
+        flex: 1;
+        border-bottom: 1px solid lightgrey;
+    }
+    [data-traitlabel] {
+        font-variation-settings: 'wght' 370;
+    }
+    [data-traitvalue] {
+        font-variation-settings: 'wght' 750;
+    }
+    [data-traitcurrent] {
+        font-variation-settings: 'wght' 750;
+        color: hsla(0, 60%, 50%, 1);
+    }
+    .--focusable:hover {
+        box-shadow: 0 0 0 2px var(--lightestgrey);
+        outline: none;
+    }
+    .--focusable:focus {
+        box-shadow: 0 0 0 2px var(--lightgrey);
+        outline: none;
+    }
+</style>

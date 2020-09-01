@@ -1,0 +1,37 @@
+<template id="tpl-trait-group">
+  <div class='trait-group'>
+    <template id="tpl-123">
+      <trait-item
+        data-nome='Craft'
+      ></trait-item>
+    </template>
+  </div>
+</template>
+
+<script type='module'>
+  import Stamp from '/node_modules/@dvo/stamp/lib/stamp.js'
+
+  class TraitGroup extends HTMLElement {
+    constructor () {
+      super ()
+      const el = document.querySelector('#tpl-trait-group')
+        .content.cloneNode(true)
+      this.appendChild(el)
+
+      this.store = {
+        traitList: [
+          { name: 'Craft', value: 42 },
+          { name: 'Manipulação', value: 17 },
+        ]
+      }
+    }
+
+    buildChildren () {
+      this.store.traitList.forEach(item => {
+        Stamp('#tpl-123')
+          .stamp()
+      })
+    }
+  }
+  customElements.define('trait-group', TraitGroup)
+</script>

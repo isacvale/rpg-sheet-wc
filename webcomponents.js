@@ -1,0 +1,5 @@
+import '/neo_components/traitItem/index.js'
+import '/neo_components/traitGroup/index.js'
+import '/neo_components/textInput/index.js'
+import '/neo_components/fichaStyle/index.js'
+import '/neo_components/traitSpend/index.js'

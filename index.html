@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua ficha</title>
+    <!-- <script src="/node_modules/celo/celo.js"></script> -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <section class="page-margin">
+        <h1 class="section-title">Stats</h1>
+        <div class="status-wrapper">
+            <text-input data-alias="name" data-label="Name" data-value="Aninha"></text-input>
+            <text-input data-alias="origin" data-label="Origin"></text-input>
+            <text-input data-alias="clan" data-label="Clan"></text-input>
+            <text-input data-alias="concept" data-label="Concept"></text-input>
+        </div>
+    </section>
+
+    <section class="page-margin">
+        <h1 class="section-title">Skills</h1>
+        <text-input data-alias="specializations" data-label="Specializations"></text-input>
+        <div class="skill-wrapper">
+            <trait-group data-skill-type="physical"></trait-group>
+            <trait-group data-skill-type="social"></trait-group>
+            <trait-group data-skill-type="mental"></trait-group>
+            <trait-group data-skill-type="martial"></trait-group>
+        </div>
+    </section>
+
+    <section class="page-margin">
+        <h1 class="section-title">Health</h1>
+        <div class="health-wrapper">
+            <trait-group
+                data-no-title
+                data-health-type="body"
+            ></trait-group>
+            <trait-group
+                data-no-title
+                data-health-type="mind"
+            ></trait-group>
+        </div>        
+    </section>
+    
+    <script type="module" src="/webcomponents.js"></script> 
+    <script type="module" src="ficha.js"></script>   
+</body>
+</html>

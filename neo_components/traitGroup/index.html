@@ -1,0 +1,28 @@
+<section class='trait-group ficha-style'>
+    <h1 class='trait-group-title ficha-style-title'></h1>
+    <div>
+        <template class="tpl-trait-group-item">
+            <trait-item data-nome=''></trait-item>
+        </template>
+    </div>
+    <div>
+        <template class="tpl-trait-group-spend">
+            <trait-spend></trait-spend>
+        </template>
+    </div>
+</section>
+
+<style>
+    trait-group {
+        flex: 1;
+        flex-basis: 200px;
+    }
+    .trait-group {
+        border-radius: 0.4em;
+        padding: 0.8em;
+        box-shadow: 1px 3px 9px 3px hsla(0, 0%, 0%, 8%);
+    }
+    [data-no-title] .trait-group > h1 {
+        display: none;
+    }
+</style>

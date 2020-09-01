@@ -1,0 +1,57 @@
+<template id='tpl-trait-item'>
+  <div class='trait-item'>
+    <div data-traitlabel></div>
+    <div class='flex-spacer'></div>
+    <div data-traitvalue>0</div>
+  </div>
+
+  <style>
+    .trait-item {
+      align-items: center;
+      padding: 0.5em 0;
+      gap: 1em;
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-spacer {
+      flex: 1;
+      border-bottom: 1px solid lightgrey;
+    }
+  </style>
+</template>
+
+<script>
+  class TraitItem extends HTMLElement {
+    constructor () {
+      super ()
+      const el = document.querySelector('#tpl-trait-item')
+        .content.cloneNode(true)
+
+      this.appendChild(el)
+      this.elNome = this.querySelector('[data-traitlabel]')
+      this.elValue = this.querySelector('[data-traitvalue]')
+      this.elNome.textContent = this.dataset.nome
+
+      this.store = {
+        traitValue: 0
+      }
+      this.proxy = new Proxy(this.store, this.handler)
+    }
+
+    handler = {
+      set: (store, prop, value) => {
+        switch (prop) {
+          case 'traitValue':
+            this.elValue.textContent = String(value)
+            store[prop] = value
+          break
+        }
+      }
+    }
+
+    setItemValue (value) {
+      this.proxy.traitValue = value || 10
+    }
+  }
+  customElements.define('trait-item', TraitItem)
+</script>
